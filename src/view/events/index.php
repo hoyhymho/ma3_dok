@@ -1,26 +1,30 @@
 <header>
-  <img src="assets/img/header_logo.png" alt="">
-  <h2>Werfplek voor verpozing & creatieve manoeuvres</h2>
-  <img src="assets/img/header_date.png" alt="">
-  <nav>
-    <ul>
-      <li><a href="#">Meer DOK</a>
-        <ul>
-          <li><a href="#">Gebruiken</li>
-          <li><a href="#">Keuken</li>
-          <li><a href="#">Sport</li>
-          <li><a href="#">Tank</li>
-        </ul>
-      </li>
-      <li><a href="#">Blogs</a></li>
-      <li><a href="#">Programma</a></li>
-    </ul>
-    <input type="text" name="search" placeholder="Search..">
-  </nav>
+  <div class="headercontent">
+    <img src="assets/img/header_logo.png" alt="" class="logo_home">
+    <h2>Werfplek voor verpozing &amp; creatieve manoeuvres</h2>
+    <img src="assets/img/header_date.png" alt="" class="headerdate">
+  </div>
+  <div class="navcontainer">
+    <nav class="width">
+      <ul>
+        <li class="dropdown"><a href="#" class="dropbtn">Meer DOK</a>
+          <div class="dropdown-content">
+            <a href="#">Gebruiken</a>
+            <a href="#">Keuken</a>
+            <a href="#">Sport</a>
+            <a href="#">Tank</a>
+          </div>
+        </li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Programma</a></li>
+      </ul>
+      <input type="text" name="search">
+    </nav>
+  </div>
 </header>
 
-<section>
-  <article>
+<section class="dokopent width">
+  <article class="dokopent_content">
     <h3>DOK Opent</h3>
     <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren iedere zondag én feestdagen van 11u tot 22u. Dit wordt de vaste afspraak. De DOKbewoners openen DOK ook op andere dagen (meer info in de agenda). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
   </article>
@@ -36,8 +40,10 @@
 <section>
   <img src="assets/img/splash_bewoners.png" alt="">
   <article class="yellowbg">
-    <h3>DOK 2017</h3>
-    <p>Wat er gebeurt op DOK wordt bepaald door de DOKbewoners. Voor het nieuwe seizoen is DOK op zoek naar nieuwe DOKbewoners, residents, die DOK 2017 mee vorm en kleur willen geven met creatieve manoeuvres. Samen met de bewoners biedt DOK ruimte aan initiatieven op vlak van cultuur, kunst, sport, sociaal-cultureel, ecologie en welzijn.</p>
+    <div class="dok2017_content width">
+      <h3>DOK 2017</h3>
+      <p>Wat er gebeurt op DOK wordt bepaald door de DOKbewoners. Voor het nieuwe seizoen is DOK op zoek naar nieuwe DOKbewoners, residents, die DOK 2017 mee vorm en kleur willen geven met creatieve manoeuvres. Samen met de bewoners biedt DOK ruimte aan initiatieven op vlak van cultuur, kunst, sport, sociaal-cultureel, ecologie en welzijn.</p>
+    </div>
   </article>
 </section>
 
@@ -74,7 +80,7 @@
   </div>
 </section>
 
-<section>
+<section class="width">
   <article>
     <h3>Opkomende events</h3>
     <div class="eventcontainer">
@@ -92,14 +98,14 @@
   <img src="assets/img/splash_concert.png" alt="">
 </section>
 
-<section>
+<section class="width">
   <img src="assets/img/splash_mail.png" alt="">
   <article>
     <h3>blijf op de hoogte</h3>
     <div>
       <p>Word verwittigd met het laatste nieuws en concerten</p>
       <form action="index.html" method="post" class="subscribe-form">
-        <input type="email" name="email" class="subscribe-input" placeholder="Email address" autofocus>
+        <input type="email" name="email" class="subscribe-input" placeholder="Email address">
         <button type="submit" class="subscribe-submit">Inschrijven</button>
       </form>
     </div>

@@ -3025,6 +3025,15 @@ gulp-decompress@^1.2.0:
     gulp-util "^3.0.1"
     readable-stream "^2.0.2"
 
+gulp-postcss:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-6.3.0.tgz#33ee9723e59c302f33d707fc4b7398b10f032bff"
+  dependencies:
+    gulp-util "^3.0.8"
+    postcss "^5.2.10"
+    postcss-load-config "^1.1.0"
+    vinyl-sourcemaps-apply "^0.2.1"
+
 gulp-rename@^1.2.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.2.2.tgz#3ad4428763f05e2764dec1c67d868db275687817"
@@ -3039,7 +3048,7 @@ gulp-sourcemaps@1.6.0:
     through2 "^2.0.0"
     vinyl "^1.0.0"
 
-gulp-util@^3.0.1:
+gulp-util@^3.0.1, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -5323,7 +5332,7 @@ postcss-modules-values@^1.1.0:
     icss-replace-symbols "^1.0.2"
     postcss "^5.0.14"
 
-postcss-nesting@^2.0.5:
+postcss-nesting@^2.0.5, postcss-nesting@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-2.3.1.tgz#94a6b6a4ef707fbec20a87fee5c957759b4e01cf"
   dependencies:
@@ -5484,7 +5493,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.3, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.1.1, postcss@^5.2.0, postcss@^5.2.11, postcss@^5.2.4, postcss@^5.2.5, postcss@^5.2.9:
+postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.3, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.1.1, postcss@^5.2.0, postcss@^5.2.10, postcss@^5.2.11, postcss@^5.2.4, postcss@^5.2.5, postcss@^5.2.9:
   version "5.2.11"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.11.tgz#ff29bcd6d2efb98bfe08a022055ec599bbe7b761"
   dependencies:
@@ -6161,7 +6170,7 @@ source-map@^0.4.2, source-map@0.4.x:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3, source-map@0.5.x:
+source-map@^0.5.0, source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3, source-map@0.5.x:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
@@ -6975,6 +6984,12 @@ vinyl-fs@^2.2.0:
     through2-filter "^2.0.0"
     vali-date "^1.0.0"
     vinyl "^1.0.0"
+
+vinyl-sourcemaps-apply@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vinyl-sourcemaps-apply/-/vinyl-sourcemaps-apply-0.2.1.tgz#ab6549d61d172c2b1b87be5c508d239c8ef87705"
+  dependencies:
+    source-map "^0.5.1"
 
 vinyl@^0.4.3:
   version "0.4.6"

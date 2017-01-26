@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>DOK</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <?php echo $css;?>
   </head>
   <body>
@@ -15,7 +16,7 @@
     </div>
 
     <footer>
-      <div>
+      <div class="width">
         <img src="assets/img/sponsor1.png" alt="sponsor">
         <img src="assets/img/sponsor1.png" alt="sponsor">
         <img src="assets/img/sponsor1.png" alt="sponsor">
@@ -29,7 +30,7 @@
         <img src="assets/img/sponsor1.png" alt="sponsor">
         <img src="assets/img/sponsor1.png" alt="sponsor">
       </div>
-      <div>
+      <div class= "width">
         <p>
           Splitsing Koopvaardijlaan – Afrikalaan <br />
           9000 Gent <br />
@@ -38,5 +39,6 @@
       </div>
     </footer>
     <?php echo $js;?>
+    </div>
   </body>
 </html>
