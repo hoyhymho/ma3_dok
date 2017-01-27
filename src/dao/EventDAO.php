@@ -136,4 +136,13 @@ class EventDAO extends DAO {
     return $tagsByEventId;
   }
 
+  public function selectNextEvents(){
+    $sql ="SELECT * FROM `ma3_dok_events` ORDER BY start DESC LIMIT 3" ;
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
 }

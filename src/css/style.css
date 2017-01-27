@@ -4,13 +4,14 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  background-color: green;
+  background-color: #f0eaeb;
   color: #555;
   line-height: 170%;
+  width: 100%;
 }
 
 .width {
-  width: 96rem;
+  width: 960px;
   margin: auto;
 }
 
@@ -64,7 +65,7 @@ header h2 {
 .headerdate {
   position: absolute;
   top: 1rem;
-  right: -10rem;
+  right: -2rem;
 }
 
 nav {
@@ -115,7 +116,7 @@ li a:hover, .dropdown:hover .dropbtn {
 
 .dropdown-content a {
   color: black;
-  padding: .9rem 1.6rem;
+  padding: .5rem 1.6rem;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -132,7 +133,7 @@ li a:hover, .dropdown:hover .dropbtn {
 nav input {
   font-size: 1em;
   width: 10rem;
-  height: 3rem;
+  height: 2rem;
   vertical-align: center;
   transition: width .4s ease-in-out;
 }
@@ -142,11 +143,211 @@ nav input:focus {
 }
 
 .dokopent {
-  margin-top: 10rem;
+  margin-top: 8rem;
+  position: relative;
 }
 
 .dokopent_content {
-  width: 49rem;
+  width: 24rem;
   background-image: url(/assets/img/aboutpaper.png);
-  padding: 3rem 8rem 6rem 4rem;
+  background-repeat: no-repeat;
+  padding: 3rem 8rem 5rem 2rem;
 }
+
+.dokopent_lijst {
+  position: absolute;
+  right: 5rem;
+  top: 3rem;
+}
+
+.dokopent_lijst ul li {
+  background-color: #eb4b67;
+  color: white;
+  margin-top: .7rem;
+  padding: .8rem;
+  padding-left: 3rem;
+  width: 23rem;
+  background-image: url(/assets/img/plus.png);
+  background-repeat: no-repeat;
+  background-position: 1rem;
+}
+
+.dok2017 {
+  margin-top: 13rem;
+}
+
+.yellowbg {
+  background-color: #fad27b;
+  height: 70%;
+}
+
+.dok2017_content {
+  display: flex;
+}
+
+.dok2017_content img {
+  margin-left: -1rem;
+  margin-top: -5rem;
+}
+
+.dok2017_content div {
+  margin-top: 3rem;
+}
+
+.dokinfo {
+  margin-top: 8rem;
+}
+
+.longpaper_container {
+  background-image: url(/assets/img/longpaper.png);
+  width: 20rem;
+  padding: 1rem 5rem 9rem 2rem;
+  margin: auto;
+  position: relative;
+}
+
+.longpaper_container article {
+  margin-top: 2rem;
+}
+
+.criteria {
+  position: absolute;
+  top: 1rem;
+  right: -13rem;
+  background-image: url(/assets/img/postit.png);
+  background-repeat: no-repeat;
+  color: white;
+  padding: .9rem;
+  width: 15rem;
+}
+
+.criteria h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.criteria li {
+  margin-top: .4rem;
+}
+
+.nextevents {
+  margin-top: 8rem;
+  background-image: url(/assets/img/splash_concert.png);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  padding-bottom: 15rem;
+}
+
+.eventcontainer {
+  display: flex;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.eventdate {
+  background-color: #fad27b;
+  padding: 1rem;
+  text-align: center;
+}
+
+.eventdag {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.eventmaand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.eventname {
+  background-image: url(/assets/img/eventpaper.png);
+  padding: 1rem;
+  width: 22rem;
+}
+
+.eventname a {
+  text-decoration: none;
+  color: #555;
+  float: right;
+  margin-top: -.3rem;
+}
+
+.eventname h4 {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.nieuwsbrief {
+  margin-top: 8rem;
+  display: flex;
+}
+
+.nieuwsbrief img {
+  margin-left: -4rem;
+  margin-top: -7rem;
+}
+
+.nieuwsbrief article {
+  margin-left: -3rem;
+}
+
+.nieuwsbrief_container {
+  background-image: url(/assets/img/subpaper.png);
+  padding: .8rem 1.3rem;
+}
+
+.nieuwsbrief input {
+  height: 2rem;
+  width: 13rem;
+  background-color: #f0eaeb;
+  color: #555;
+  font-size: .9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+}
+
+.nieuwsbrief button {
+  height: 2rem;
+  background-color: #eb4b67;
+  color: white;
+  font-size: .9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: -.8rem;
+  border: none;
+}
+
+footer {
+  margin-top: 5rem;
+  background-color: #81ccec;
+  padding-top: 5rem;
+}
+
+.sponsors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.footerinfo {
+  padding: 1rem 0;
+  text-align: right;
+  color: white;
+  background-color: #6c9baf;
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 180%;
+}
+
+/*
+roos: #eb4b67
+geel: #fad27b
+lichtblauw: #6cd0e0
+donkerblauw: #2eb5c8
+grijs: #555
+*/

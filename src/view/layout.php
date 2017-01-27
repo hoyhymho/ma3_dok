@@ -16,22 +16,14 @@
     </div>
 
     <footer>
-      <div class="width">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
-        <img src="assets/img/sponsor1.png" alt="sponsor">
+      <div class="sponsors width">
+        <?php for ($i=1; $i <= 11; $i++):?>
+          <img src="assets/img/sponsor<?php echo $i ?>.png" alt="sponsor">
+        <?php endfor; ?>
+
       </div>
-      <div class= "width">
-        <p>
+      <div class="footerinfo">
+        <p class="width">
           Splitsing Koopvaardijlaan – Afrikalaan <br />
           9000 Gent <br />
           info@dokgent.be

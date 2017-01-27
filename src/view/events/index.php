@@ -28,7 +28,7 @@
     <h3>DOK Opent</h3>
     <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren iedere zondag én feestdagen van 11u tot 22u. Dit wordt de vaste afspraak. De DOKbewoners openen DOK ook op andere dagen (meer info in de agenda). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
   </article>
-  <article>
+  <article class="dokopent_lijst">
     <ul>
       <li>Iedere zondag staat er vanaf 11u taart, koffie en gazet voor u klaar in de kantine.</li>
       <li>Cosy Cozy zorgt tussen 14u en 19u voor meer dan gezellige dj’s.</li>
@@ -37,18 +37,20 @@
   </article>
 </section>
 
-<section>
-  <img src="assets/img/splash_bewoners.png" alt="">
+<section class="dok2017">
   <article class="yellowbg">
     <div class="dok2017_content width">
-      <h3>DOK 2017</h3>
-      <p>Wat er gebeurt op DOK wordt bepaald door de DOKbewoners. Voor het nieuwe seizoen is DOK op zoek naar nieuwe DOKbewoners, residents, die DOK 2017 mee vorm en kleur willen geven met creatieve manoeuvres. Samen met de bewoners biedt DOK ruimte aan initiatieven op vlak van cultuur, kunst, sport, sociaal-cultureel, ecologie en welzijn.</p>
+      <img src="assets/img/splash_bewoners.png" alt="">
+      <div>
+        <h3>DOK 2017</h3>
+        <p>Wat er gebeurt op DOK wordt bepaald door de DOKbewoners. Voor het nieuwe seizoen is DOK op zoek naar nieuwe DOKbewoners, residents, die DOK 2017 mee vorm en kleur willen geven met creatieve manoeuvres. Samen met de bewoners biedt DOK ruimte aan initiatieven op vlak van cultuur, kunst, sport, sociaal-cultureel, ecologie en welzijn.</p>
+      </div>
     </div>
   </article>
 </section>
 
-<section>
-  <div>
+<section class="dokinfo">
+  <div class="longpaper_container">
     <article>
       <h3>DOK zoekt</h3>
       <p>DOK wil nadrukkelijk nieuwe ideëen, beginnende collectieven en projecten hosten. DOK staat open voor voorstellen door individuen, buurtbewoners, kunstenaars alsook die van collectieven of organisaties.</p>
@@ -67,42 +69,47 @@
         <li>Slot van het seizoen is gepland op 25 september</li>
       </ul>
     </article>
+    <div class="criteria">
+      <h4>Criteria</h4>
+      <ul>
+        <li>Toegangelijkheid</li>
+        <li>(artistieke) vernieuwing</li>
+        <li>Ondersteuning bieden aan</li>
+        <li>Een creatieve stedelijke dynamiek</li>
+        <li>Experiment en ontmoeting</li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <h4>Criteria</h4>
-    <ul>
-      <li>Toegangelijkheid</li>
-      <li>(artistieke) vernieuwing</li>
-      <li>Ondersteuning bieden aan</li>
-      <li>Een creatieve stedelijke dynamiek</li>
-      <li>Experiment en ontmoeting</li>
-    </ul>
-  </div>
+
 </section>
 
-<section class="width">
-  <article>
+<section class="nextevents">
+  <article class="width">
     <h3>Opkomende events</h3>
-    <div class="eventcontainer">
-      <div class="eventimg"></div>
-      <div class="eventdate">
-        <p>20</p>
-        <p>Sept</p>
+    <?php foreach ($nextEvents as $event): ?>
+      <div class="eventcontainer">
+        <div class="eventimg">
+
+        </div>
+        <div class="eventdate">
+          <p class="eventdag">20</p>
+          <p class="eventmaand">Sept</p>
+        </div>
+        <div class="eventname">
+          <h4><?php echo $event['title']; ?></h4>
+          <p>20/12/2017</p>
+          <a href="#">meer info</a>
+        </div>
       </div>
-      <div>
-        <h4>Les freres troubouch</h4>
-        <p>20/12/2017</p>
-      </div>
-    </div> <!-- end of eventcontainer -->
+    <?php endforeach; ?>
   </article>
-  <img src="assets/img/splash_concert.png" alt="">
 </section>
 
-<section class="width">
+<section class="nieuwsbrief width">
   <img src="assets/img/splash_mail.png" alt="">
   <article>
     <h3>blijf op de hoogte</h3>
-    <div>
+    <div class="nieuwsbrief_container">
       <p>Word verwittigd met het laatste nieuws en concerten</p>
       <form action="index.html" method="post" class="subscribe-form">
         <input type="email" name="email" class="subscribe-input" placeholder="Email address">

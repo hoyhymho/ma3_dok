@@ -94,6 +94,9 @@ class EventsController extends Controller {
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
+
+    $nextEvents = $this->eventDAO->selectNextEvents();
+		$this->set('nextEvents', $nextEvents);
   }
 
 }
