@@ -137,12 +137,22 @@ class EventDAO extends DAO {
   }
 
   public function selectNextEvents(){
-    $sql ="SELECT * FROM `ma3_dok_events` ORDER BY start DESC LIMIT 3" ;
+    $sql = "SELECT * FROM `ma3_dok_events` ORDER BY start DESC LIMIT 3" ;
 
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
 
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function selectEventsByMonth($month){
+    $sql = "SELECT * FROM `ma3_dok_events` WHERE MONTH(start) = :month" ;
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':month', $month);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
 }

@@ -26,29 +26,32 @@ h3 {
   display: inline-block;
 }
 
-header {
+.highlight {
+  font-weight: bold;
+  background-image: linear-gradient(0deg, transparent 8px, #6cd0e0 0);
+  background-position: left 0 top .8rem;
+  background-repeat: no-repeat;
+}
+
+.header_home {
   background-image: url(/assets/img/headerimg.png);
   background-color: #6cd0e0;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 5rem;
 
-  /*& h2 {
+  & h2 {
     text-align: center;
+    color: #3d3d3d;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 2rem;
   }
 
   & img {
     display: block;
     margin: auto;
-  }*/
-}
-
-header h2 {
-  text-align: center;
-  color: #3d3d3d;
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-top: 2rem;
+  }
 }
 
 .logo_home {
@@ -71,22 +74,34 @@ header h2 {
 nav {
   display: flex;
   justify-content: space-between;
+
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    & li {
+      display: inline;
+    }
+  }
+
+  & input {
+    font-size: 1em;
+    width: 10rem;
+    height: 2rem;
+    vertical-align: center;
+    transition: width .4s ease-in-out;
+  }
+}
+
+nav input:focus {
+  width: 20%;
 }
 
 .navcontainer {
   background-color: #2eb5c8;
   margin-top: 3rem;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav ul li {
-  display: inline;
 }
 
 nav ul li a, .dropbtn {
@@ -112,34 +127,22 @@ li a:hover, .dropdown:hover .dropbtn {
   background-color: #f9f9f9;
   min-width: 160px;
   z-index: 1;
-}
 
-.dropdown-content a {
-  color: black;
-  padding: .5rem 1.6rem;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+  & a {
+    color: black;
+    padding: .5rem 1.6rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
 
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
+  & a:hover {
+    background-color: #f1f1f1;
+  }
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-nav input {
-  font-size: 1em;
-  width: 10rem;
-  height: 2rem;
-  vertical-align: center;
-  transition: width .4s ease-in-out;
-}
-
-nav input:focus {
-  width: 20%;
 }
 
 .dokopent {
@@ -158,18 +161,18 @@ nav input:focus {
   position: absolute;
   right: 5rem;
   top: 3rem;
-}
 
-.dokopent_lijst ul li {
-  background-color: #eb4b67;
-  color: white;
-  margin-top: .7rem;
-  padding: .8rem;
-  padding-left: 3rem;
-  width: 23rem;
-  background-image: url(/assets/img/plus.png);
-  background-repeat: no-repeat;
-  background-position: 1rem;
+  & ul li {
+    background-color: #eb4b67;
+    color: white;
+    margin-top: .7rem;
+    padding: .8rem;
+    padding-left: 3rem;
+    width: 23rem;
+    background-image: url(/assets/img/plus.png);
+    background-repeat: no-repeat;
+    background-position: 1rem;
+  }
 }
 
 .dok2017 {
@@ -183,15 +186,15 @@ nav input:focus {
 
 .dok2017_content {
   display: flex;
-}
 
-.dok2017_content img {
-  margin-left: -1rem;
-  margin-top: -5rem;
-}
+  & img {
+    margin-left: -1rem;
+    margin-top: -5rem;
+  }
 
-.dok2017_content div {
-  margin-top: 3rem;
+  & div {
+    margin-top: 3rem;
+  }
 }
 
 .dokinfo {
@@ -204,10 +207,22 @@ nav input:focus {
   padding: 1rem 5rem 9rem 2rem;
   margin: auto;
   position: relative;
+
+  & article {
+    margin-top: 2rem;
+  }
 }
 
-.longpaper_container article {
-  margin-top: 2rem;
+.seizoen {
+
+  & li {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    background-image: url(/assets/img/bullet.png);
+    background-repeat: no-repeat;
+    background-position: 0% 20%;
+    line-height: 120%;
+  }
 }
 
 .criteria {
@@ -217,18 +232,19 @@ nav input:focus {
   background-image: url(/assets/img/postit.png);
   background-repeat: no-repeat;
   color: white;
-  padding: .9rem;
+  padding: 2rem;
   width: 15rem;
-}
+  transform: rotate(-6deg);
 
-.criteria h4 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2em;
-}
+  & h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 
-.criteria li {
-  margin-top: .4rem;
+  & li {
+    margin-top: .4rem;
+  }
 }
 
 .nextevents {
@@ -237,88 +253,86 @@ nav input:focus {
   background-repeat: no-repeat;
   background-position: 100%;
   padding-bottom: 15rem;
-}
 
-.eventcontainer {
-  display: flex;
-  height: 6rem;
-  margin-bottom: 1rem;
-}
+  & .eventcontainer {
+    display: flex;
+    margin-bottom: 1rem;
+  }
 
-.eventdate {
-  background-color: #fad27b;
-  padding: 1rem;
-  text-align: center;
-}
+  & .eventdate {
+    background-color: #fad27b;
+    padding: 1rem;
+    text-align: center;
+  }
 
-.eventdag {
-  font-size: 2em;
-  font-weight: bold;
-}
+  & .eventdag {
+    font-size: 2em;
+    font-weight: bold;
+  }
 
-.eventmaand {
-  text-transform: uppercase;
-  font-weight: bold;
-}
+  & .eventmaand {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-.eventname {
-  background-image: url(/assets/img/eventpaper.png);
-  padding: 1rem;
-  width: 22rem;
-}
+  & .eventname {
+    background-image: url(/assets/img/eventpaper.png);
+    padding: 1rem;
+    width: 22rem;
 
-.eventname a {
-  text-decoration: none;
-  color: #555;
-  float: right;
-  margin-top: -.3rem;
-}
+    & a {
+      text-decoration: none;
+      color: #555;
+      float: right;
+      margin-top: -.3rem;
+    }
 
-.eventname h4 {
-  text-transform: uppercase;
-  font-size: 1.4em;
-  font-weight: bold;
+    & h4 {
+      text-transform: uppercase;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+  }
 }
 
 .nieuwsbrief {
-  margin-top: 8rem;
   display: flex;
-}
 
-.nieuwsbrief img {
-  margin-left: -4rem;
-  margin-top: -7rem;
-}
+  & img {
+    margin-left: -4rem;
+    margin-top: -7rem;
+  }
 
-.nieuwsbrief article {
-  margin-left: -3rem;
+  & article {
+    margin-left: -3rem;
+  }
+
+  & input {
+    height: 2rem;
+    width: 13rem;
+    background-color: #f0eaeb;
+    color: #555;
+    font-size: .9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  & button {
+    height: 2rem;
+    background-color: #eb4b67;
+    color: white;
+    font-size: .9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: -.8rem;
+    border: none;
+  }
 }
 
 .nieuwsbrief_container {
   background-image: url(/assets/img/subpaper.png);
   padding: .8rem 1.3rem;
-}
-
-.nieuwsbrief input {
-  height: 2rem;
-  width: 13rem;
-  background-color: #f0eaeb;
-  color: #555;
-  font-size: .9em;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: none;
-}
-
-.nieuwsbrief button {
-  height: 2rem;
-  background-color: #eb4b67;
-  color: white;
-  font-size: .9em;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-left: -.8rem;
-  border: none;
 }
 
 footer {
@@ -342,6 +356,72 @@ footer {
   text-transform: uppercase;
   font-weight: bold;
   line-height: 180%;
+}
+
+/*PROGRAMMA*/
+
+.header_standard {
+  background-image: url(/assets/img/headerimg.png);
+  background-color: #6cd0e0;
+  background-repeat: no-repeat;
+  background-position: right 60%;
+
+  & img {
+    margin-top: 1rem;
+  }
+}
+
+.programma_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.programma {
+  margin-top: 5rem;
+  background-image: url(/assets/img/splash_concert.png);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  padding-bottom: 15rem;
+
+  & .eventcontainer {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  & .eventdate {
+    background-color: #fad27b;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  & .eventdag {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  & .eventmaand {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  & .eventname {
+    background-image: url(/assets/img/eventpaper.png);
+    padding: 1rem;
+    width: 22rem;
+
+    & a {
+      text-decoration: none;
+      color: #555;
+      float: right;
+      margin-top: -.3rem;
+    }
+
+    & h4 {
+      text-transform: uppercase;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+  }
 }
 
 /*

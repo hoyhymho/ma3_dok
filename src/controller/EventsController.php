@@ -99,4 +99,10 @@ class EventsController extends Controller {
 		$this->set('nextEvents', $nextEvents);
   }
 
+  public function programma() {
+    $month = $_GET['month'];
+
+    $monthlyEvents = $this->eventDAO->selectEventsByMonth($month);
+		$this->set('monthlyEvents', $monthlyEvents);
+  }
 }

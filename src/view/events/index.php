@@ -1,4 +1,4 @@
-<header>
+<header class="header_home">
   <div class="headercontent">
     <img src="assets/img/header_logo.png" alt="" class="logo_home">
     <h2>Werfplek voor verpozing &amp; creatieve manoeuvres</h2>
@@ -16,7 +16,7 @@
           </div>
         </li>
         <li><a href="#">Blogs</a></li>
-        <li><a href="#">Programma</a></li>
+        <li><a href="index.php?page=programma">Programma</a></li>
       </ul>
       <input type="text" name="search">
     </nav>
@@ -26,13 +26,13 @@
 <section class="dokopent width">
   <article class="dokopent_content">
     <h3>DOK Opent</h3>
-    <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren iedere zondag én feestdagen van 11u tot 22u. Dit wordt de vaste afspraak. De DOKbewoners openen DOK ook op andere dagen (meer info in de agenda). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
+    <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren <span class="highlight">iedere zondag én feestdagen van 11u tot 22u</span>. Dit wordt de vaste afspraak. De DOKbewoners openen <span class="highlight">DOK ook op andere dagen</span> (meer info in de agenda). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
   </article>
   <article class="dokopent_lijst">
     <ul>
-      <li>Iedere zondag staat er vanaf 11u taart, koffie en gazet voor u klaar in de kantine.</li>
-      <li>Cosy Cozy zorgt tussen 14u en 19u voor meer dan gezellige dj’s.</li>
-      <li>Vanaf 31juli kan je weer iedere zondag komen grasduinen op de DOK(rommel)markt, voorzien van eetstandjes.</li>
+      <li>Iedere zondag staat er vanaf 11u <span class="highlight">taart, koffie en gazet</span> voor u klaar in de kantine.</li>
+      <li>Cosy Cozy zorgt tussen 14u en 19u voor <span class="highlight">meer dan gezellige dj’s</span>.</li>
+      <li>Vanaf 31juli kan je weer iedere zondag komen grasduinen op de <span class="highlight">DOK(rommel)markt</span>, voorzien van eetstandjes.</li>
     </ul>
   </article>
 </section>
@@ -59,7 +59,7 @@
       <h3>DOK biedt</h3>
       <p>Vanaf april tot eind september kan je werken en creeëren op DOK. Vanaf mei tot eind september kan je publieke activiteiten ontwikkelen. DOK zoekt samen met jou naar een kader (inhoudelijk en logisitiek) om je project te ontwikkelen en biedt haar netwerk aan. Een meerjarig traject behoort ook tot de mogelijkheden.</p>
     </article>
-    <article>
+    <article class="seizoen">
       <h3>Seizoen 2017</h3>
       <ul>
         <li>Opening op 1 mei</li>
@@ -86,7 +86,9 @@
 <section class="nextevents">
   <article class="width">
     <h3>Opkomende events</h3>
+
     <?php foreach ($nextEvents as $event): ?>
+
       <div class="eventcontainer">
         <div class="eventimg">
 
@@ -97,7 +99,7 @@
         </div>
         <div class="eventname">
           <h4><?php echo $event['title']; ?></h4>
-          <p>20/12/2017</p>
+          <p><?php echo $event['start']; ?></p>
           <a href="#">meer info</a>
         </div>
       </div>
