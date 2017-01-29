@@ -88,14 +88,14 @@ class EventDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  // public function selectNextEvents(){
-  //   $sql = "SELECT *, ma3_dok_organisers.id AS organiser_id FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id WHERE  LIMIT 3" ;
-  //
-  //   $stmt = $this->pdo->prepare($sql);
-  //   $stmt->execute();
-  //
-  //   return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  // }
+  public function selectSameOrganisers($id){
+    $sql = "SELECT * FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id LIMIT 3";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 
   private function _getEventIdsFromResult(&$result) {
     $eventIds = array();

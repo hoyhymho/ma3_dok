@@ -111,5 +111,8 @@ class EventsController extends Controller {
 
     $event = $this->eventDAO->selectById($id);
 		$this->set('event', $event);
+
+    $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
+		$this->set('organiserEvents', $organiserEvents);
   }
 }

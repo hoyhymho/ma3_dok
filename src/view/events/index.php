@@ -101,7 +101,7 @@
         <div class="eventname">
           <h4><?php echo $event['title']; ?></h4>
           <p><?php echo $event['start']; ?></p>
-          <a href="#">meer info</a>
+          <a href="#" class="meerinfo">meer info</a>
         </div>
       </div>
     <?php endforeach; ?>

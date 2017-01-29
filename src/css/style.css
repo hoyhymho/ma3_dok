@@ -15,14 +15,25 @@ body {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 1.3rem;
   background-color: #eb4b67;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  padding: .2rem 2rem .2rem .5rem;
+  padding: .1rem 1.6rem .1rem .5rem;
   display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.meerinfo {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: #555;
 }
 
 .highlight {
@@ -290,13 +301,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
     background-image: url(/assets/img/eventpaper.png);
     padding: 1rem;
     width: 30vw;
-
-    & a {
-      text-decoration: none;
-      color: #555;
-      float: right;
-      margin-top: -.3rem;
-    }
+    position: relative;
 
     & h4 {
       text-transform: uppercase;
@@ -398,7 +403,7 @@ footer {
     object-fit: cover;
   }
 
-  & .programma_events {
+  & .programma_events {
     margin-left: 10vw;
   }
 
@@ -476,6 +481,105 @@ footer {
     & a:hover {
       color: #eb4b67;
     }
+  }
+}
+
+/*DETAIL*/
+
+.detail_header {
+  background-color: #fad27b;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 3rem;
+}
+
+.detail_flex {
+  display: flex;
+  justify-content: space-between;
+
+  & .detail_about {
+    background-image: url(/assets/img/aboutpaper.png);
+    max-width: 26rem;
+    padding: 2rem;
+  }
+}
+
+.detail_sidebar {
+  width: 15rem;
+
+  & h4 {
+    background-color: #2eb5c8;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: .5rem;
+  }
+
+  & div {
+    background-color: #fad27b;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  & ul {
+    margin-bottom: 1rem;
+    line-height: 230%;
+  }
+
+  & a {
+    text-decoration: none;
+    color: white;
+    background-color: #eb4b67;
+    padding: .2rem;
+    float: right;
+    margin-right: 1rem;
+  }
+}
+
+.detail_gallery {
+  margin-top: 7rem;
+}
+
+.detail_organiser {
+  margin-top: 4rem;
+}
+
+.detail_event_container {
+  display: flex;
+}
+
+.organiserevent {
+  width: 20rem;
+  margin-right: 1rem;
+
+  & div {
+    background-image: url(/assets/img/eventpaper.png);
+    padding: .4rem;
+    min-height: 6rem;
+    position: relative;
+
+    & h4 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    & p {
+      color: #555;
+    }
+  }
+
+  & img {
+    overflow: hidden;
+    height: 8rem;
+    width: 20rem;
+    object-fit: cover;
+    margin-bottom: -.5rem;
   }
 }
 
