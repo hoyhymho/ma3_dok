@@ -16,7 +16,7 @@
           </div>
         </li>
         <li><a href="#">Blogs</a></li>
-        <li><a href="index.php?page=programma">Programma</a></li>
+        <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
       </ul>
       <input type="text" name="search">
     </nav>
@@ -27,14 +27,15 @@
   <article class="dokopent_content">
     <h3>DOK Opent</h3>
     <p>Vanaf 1 mei 2017 tot 25 september 2017 opent DOK haar deuren <span class="highlight">iedere zondag én feestdagen van 11u tot 22u</span>. Dit wordt de vaste afspraak. De DOKbewoners openen <span class="highlight">DOK ook op andere dagen</span> (meer info in de agenda). Op zondag kan je zowel terecht in de kantine, als in de speeltuin, het park (met het strand en de arena), de DOKbox, enz.</p>
+    <article class="dokopent_lijst">
+      <ul>
+        <li>Iedere zondag staat er vanaf 11u <span class="highlight">taart, koffie en gazet</span> voor u klaar in de kantine.</li>
+        <li>Cosy Cozy zorgt tussen 14u en 19u voor <span class="highlight">meer dan gezellige dj’s</span>.</li>
+        <li>Vanaf 31juli kan je weer iedere zondag komen grasduinen op de <span class="highlight">DOK(rommel)markt</span>, voorzien van eetstandjes.</li>
+      </ul>
+    </article>
   </article>
-  <article class="dokopent_lijst">
-    <ul>
-      <li>Iedere zondag staat er vanaf 11u <span class="highlight">taart, koffie en gazet</span> voor u klaar in de kantine.</li>
-      <li>Cosy Cozy zorgt tussen 14u en 19u voor <span class="highlight">meer dan gezellige dj’s</span>.</li>
-      <li>Vanaf 31juli kan je weer iedere zondag komen grasduinen op de <span class="highlight">DOK(rommel)markt</span>, voorzien van eetstandjes.</li>
-    </ul>
-  </article>
+
 </section>
 
 <section class="dok2017">
@@ -90,12 +91,12 @@
     <?php foreach ($nextEvents as $event): ?>
 
       <div class="eventcontainer">
-        <div class="eventimg">
 
-        </div>
+        <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
+
         <div class="eventdate">
-          <p class="eventdag">20</p>
-          <p class="eventmaand">Sept</p>
+          <p class="eventdag"><?php echo date('d', strtotime($event['start'])); ?></p>
+          <p class="eventmaand"><?php echo date('M', strtotime($event['start'])); ?></p>
         </div>
         <div class="eventname">
           <h4><?php echo $event['title']; ?></h4>

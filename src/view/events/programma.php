@@ -14,7 +14,7 @@
           </div>
         </li>
         <li><a href="#">Blogs</a></li>
-        <li><a href="index.php?page=programma">Programma</a></li>
+        <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
       </ul>
       <input type="text" name="search">
     </nav>
@@ -29,26 +29,24 @@
       <p>2017</p>
       <ul>
         <li><a href="index.php?page=programma&amp;month=5">Mei</a></li>
-        <li><a href="#">Juni</a></li>
-        <li><a href="#">Juli</a></li>
-        <li><a href="#">Augustus</a></li>
-        <li><a href="#">September</a></li>
+        <li><a href="index.php?page=programma&amp;month=6">Juni</a></li>
+        <li><a href="index.php?page=programma&amp;month=7">Juli</a></li>
+        <li><a href="index.php?page=programma&amp;month=8">Augustus</a></li>
+        <li><a href="index.php?page=programma&amp;month=9">September</a></li>
       </ul>
     </div>
     <div class="programma_events">
       <?php foreach ($monthlyEvents as $event): ?>
         <div class="eventcontainer">
-          <div class="eventimg">
-
-          </div>
+          <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
           <div class="eventdate">
-            <p class="eventdag">20</p>
-            <p class="eventmaand">Sept</p>
+            <p class="eventdag"><?php echo date('d', strtotime($event['start'])); ?></p>
+            <p class="eventmaand"><?php echo date('M', strtotime($event['start'])); ?></p>
           </div>
           <div class="eventname">
             <h4><?php echo $event['title']; ?></h4>
             <p><?php echo $event['start']; ?></p>
-            <a href="#">meer info</a>
+            <a href="index.php?page=detail&amp;id=<?php echo $event['id'] ?>">meer info</a>
           </div>
         </div>
       <?php endforeach; ?>

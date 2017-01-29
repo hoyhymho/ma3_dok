@@ -105,4 +105,11 @@ class EventsController extends Controller {
     $monthlyEvents = $this->eventDAO->selectEventsByMonth($month);
 		$this->set('monthlyEvents', $monthlyEvents);
   }
+
+  public function detail() {
+    $id = $_GET['id'];
+
+    $event = $this->eventDAO->selectById($id);
+		$this->set('event', $event);
+  }
 }
