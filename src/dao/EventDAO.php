@@ -150,7 +150,7 @@ class EventDAO extends DAO {
   }
 
   public function selectNextEvents(){
-    $sql = "SELECT * FROM `ma3_dok_events` ORDER BY start DESC LIMIT 3" ;
+    $sql = "SELECT * FROM `ma3_dok_events` ORDER BY start ASC LIMIT 3" ;
 
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();

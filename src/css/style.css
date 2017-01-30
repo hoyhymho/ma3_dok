@@ -10,7 +10,7 @@ body {
 }
 
 .width {
-  width: 960px;
+  width: 96vw;
   margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@ a {
 .highlight {
   font-weight: bold;
   background-image: linear-gradient(0deg, transparent 8px, #6cd0e0 0);
-  background-position: left 0 top .8rem;
+  background-position: left 0 top .9rem;
   background-repeat: no-repeat;
 }
 
@@ -71,7 +71,7 @@ a {
 
 .headercontent {
   position: relative;
-  width: 50rem;
+  width: 80vw;
   margin: auto;
 }
 
@@ -81,9 +81,84 @@ a {
   right: -2rem;
 }
 
+.burger {
+  float: right;
+  font-size: 2.8em;
+  color: white;
+  margin-top: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2eb5c8;
+  overflow-y: hidden;
+  transition: .5s;
+  background-image: url(/assets/img/logo.png);
+  background-repeat: no-repeat;
+  background-position: 5% 3.5%;
+
+  & a {
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  & a:hover {
+    color: #fad27b;
+  }
+
+  & .closebtn {
+    font-size: 4em;
+    text-align: right;
+    display: block;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+  }
+
+  & .navitem {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  & .dropdown {
+    margin-bottom: 2rem;
+    line-height: 120%;
+
+    & a {
+      color: #2a2e2f;
+    }
+  }
+
+  & .socialmedia {
+    display: flex;
+    float: right;
+    margin-top: 5rem;
+
+    & img {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.overlay-content {
+  width: 100%;
+  text-align: right;
+  margin-top: 1rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   & ul {
     list-style-type: none;
@@ -98,16 +173,23 @@ nav {
 
   & input {
     font-size: 1em;
-    width: 10rem;
+    width: 4rem;
     height: 2rem;
     vertical-align: center;
     transition: width .4s ease-in-out;
     float: right;
+    border-radius: 25px;
+    border: none;
+    background-image: url(/assets/img/search.png);
+    background-position: .5rem .4rem;
+    background-repeat: no-repeat;
+    padding-left: 2.4rem;
+    color: #555;
   }
 }
 
 nav input:focus {
-  width: 20%;
+  width: 100%;
 }
 
 .navcontainer {
@@ -156,9 +238,19 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   display: block;
 }
 
-.dokopent {
-  margin-top: 8rem;
+.relative {
   position: relative;
+}
+
+.dokopent {
+  margin-top: 14rem;
+}
+
+.sfeerbeeld1 {
+  position: absolute;
+  top: -7rem;
+  left: 4rem;
+  z-index: -2;
 }
 
 .dokopent_content {
@@ -171,7 +263,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
 
 .dokopent_lijst {
   position: absolute;
-  right: -40vw;
+  left: 26rem;
   top: 2rem;
 
   & ul li {
@@ -207,6 +299,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   & div {
     margin-top: 3rem;
     width: 50vw;
+    padding-bottom: 3rem;
   }
 }
 
@@ -257,7 +350,15 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
 
   & li {
     margin-top: .4rem;
+    background-image: url(/assets/img/checked.png);
+    background-repeat: no-repeat;
+    background-position: 0% 35%;
+    padding-left: 2.5rem;
   }
+}
+
+.criteria_small {
+  display: none;
 }
 
 .nextevents {
@@ -283,6 +384,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   & .eventdate {
     background-color: #fad27b;
     padding: 1rem;
+    width: 2.5rem;
     text-align: center;
   }
 
@@ -323,6 +425,10 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
     margin-left: -3rem;
   }
 
+  & p {
+    margin-bottom: .5rem;
+  }
+
   & input {
     height: 2rem;
     width: 13rem;
@@ -360,6 +466,7 @@ footer {
 .sponsors {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
@@ -581,6 +688,248 @@ footer {
     object-fit: cover;
     margin-bottom: -.5rem;
   }
+}
+
+@media (width <= 1095px) {
+
+  html {
+    font-size: 70%;
+  }
+
+  .width {
+    width: 90vw;
+  }
+
+  nav input {
+    height: 2.5rem;
+  }
+
+  .highlight {
+    background-position: left 0 top 1.3rem;
+  }
+
+  .dokopent_lijst {
+    position: absolute;
+    left: 35rem;
+    top: 4rem;
+  }
+
+  .dokopent_content {
+    width: 50vw;
+    max-width: 30rem;
+    padding: 3rem 8rem 5rem 2rem;
+  }
+
+  .longpaper_container {
+    width: 30rem;
+  }
+
+  .criteria {
+    width: 20rem;
+    right: -18rem;
+  }
+
+  .nextevents {
+    background-position: 140%;
+
+    & .eventcontainer {
+      height: 10rem;
+    }
+
+    & .eventname {
+      width: 40vw;
+    }
+
+    & .eventdate {
+      width: 3rem;
+    }
+  }
+
+  .nieuwsbrief input, .nieuwsbrief button {
+    height: 3rem;
+  }
+
+  .nieuwsbrief input {
+    width: 22rem;
+  }
+
+  .programma_events {
+    background-position: 140%;
+
+    & .eventcontainer {
+      height: 10rem;
+    }
+
+    & .eventname {
+      width: 40vw;
+    }
+
+    & .eventdate {
+      left: 7.5vw;
+    }
+
+    & .eventimage {
+      width: 10rem;
+    }
+  }
+
+  .sidebar {
+    width: 15rem;
+  }
+}
+
+@media (width <= 740px) {
+
+  .headerdate {
+    right: 7rem;
+    top: -2rem;
+  }
+
+  .dokopent_content {
+    width: 90vw;
+    max-width: 38rem;
+    margin: auto;
+    padding: 3rem 3rem 5rem 2rem;
+    z-index: -1;
+  }
+
+  .sfeerbeeld1 {
+    overflow: hidden;
+    height: 10rem;
+    width: 90vw;
+    max-width: 43rem;
+    margin: 0 auto;
+    object-fit: cover;
+
+    position: static;
+    display: block;
+  }
+
+  .dokopent_lijst {
+    position: static;
+    display: inline-block;
+    margin: auto;
+    width: 85vw;
+    margin-top: -3rem;
+    z-index: 2;
+  }
+
+  .dokopent_lijst ul li {
+    margin: auto;
+    width: 65vw;
+    margin-bottom: .6rem;
+  }
+
+  .longpaper_container {
+    margin: 0;
+  }
+
+  .dok2017_content img {
+    margin-top: 3rem;
+  }
+
+  .nextevents {
+    background-image: none;
+    padding-bottom: 10rem;
+
+    & .eventname {
+      width: 80vw;
+    }
+  }
+
+  .nieuwsbrief article {
+    margin-left: 0;
+  }
+
+  .nieuwsbrief img {
+    display: none;
+  }
+}
+
+@media (width <= 650px) {
+
+  .dok2017_content {
+
+    & img {
+      display: none;
+    }
+
+    & div {
+      width: 90vw;
+    }
+  }
+
+  .topnav {
+    display: none;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  nav form {
+    width: 90vw;
+    margin: auto;
+    margin-left: 2rem;
+  }
+
+  nav input {
+    font-size: 2em;
+    padding-left: 2.4rem;
+    color: #555;
+    transition: none;
+    width: 100%;
+  }
+
+  .criteria {
+    display: none;
+  }
+
+  .criteria_small {
+    display: inline;
+
+    & h4 {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    & li {
+      background-image: url(/assets/img/checked_gray.png);
+      background-repeat: no-repeat;
+      background-position: 0% 35%;
+      padding-left: 2.5rem;
+    }
+  }
+
+  .programma {
+
+    & .sidebar {
+      display: none;
+    }
+
+    & .programma_events {
+      margin-left: 0;
+    }
+
+    & .eventname {
+      width: 60vw;
+    }
+  }
+
+}
+
+@media (width <= 550px) {
+
+  .dokopent_content {
+    width: 32rem;
+  }
+
+  .sfeerbeeld1 {
+    width: 37rem;
+
+  }
+
 }
 
 /*

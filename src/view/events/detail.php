@@ -16,7 +16,9 @@
         <li><a href="#">Blogs</a></li>
         <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
       </ul>
-      <input type="text" name="search">
+      <form>
+        <input type="text" name="search">
+      </form>
     </nav>
   </div>
 </header>
@@ -25,12 +27,12 @@
   <div class="detail_header">
     <h1 class="width"><?php echo $event['title']; ?></h1>
   </div>
-  <div class="detail_flex">
-    <article class="detail_about width">
+  <div class="detail_flex width">
+    <article class="detail_about">
       <h3>About</h3>
       <p><?php echo $event['description'] ?></p>
     </article>
-    <article class="detail_sidebar width">
+    <article class="detail_sidebar">
       <h4>info</h4>
       <div>
         <ul>

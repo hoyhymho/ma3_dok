@@ -1,10 +1,38 @@
 <header class="header_standard">
   <div class="width">
+    <span class="burger" onclick="openNav()">&#9776;</span>
+  </div>
+
+  <div id="myNav" class="overlay">
+    <div class="width">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <ul>
+          <li class="navitem"><a href="#">Meer DOK &#x25BC;</a></li>
+            <div class="dropdown">
+              <a href="#">Gebruiken</a>
+              <a href="#">Keuken</a>
+              <a href="#">Sport</a>
+              <a href="#">Tank</a>
+            </div>
+          <li class="navitem"><a href="#">Blogs</a></li>
+          <li class="navitem"><a href="index.php?page=programma&amp;month=5">Programma</a></li>
+        </ul>
+
+        <div class="socialmedia">
+          <a href="#"><img src="assets/img/fb.png" alt=""></a>
+          <a href="#"><img src="assets/img/tw.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="width">
     <a href="index.php"><img src="assets/img/logo.png" alt="DOK"></a>
   </div>
   <div class="navcontainer">
     <nav class="width">
-      <ul>
+      <ul class="topnav">
         <li class="dropdown"><a href="#" class="dropbtn">Meer DOK</a>
           <div class="dropdown-content">
             <a href="#">Gebruiken</a>
@@ -16,7 +44,9 @@
         <li><a href="#">Blogs</a></li>
         <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
       </ul>
-      <input type="text" name="search">
+      <form>
+        <input type="text" name="search">
+      </form>
     </nav>
   </div>
 </header>
@@ -36,6 +66,7 @@
       </ul>
     </div>
     <div class="programma_events">
+      <h3><?php echo date('F', strtotime($_GET['month'])); ?></h3>
       <?php foreach ($monthlyEvents as $event): ?>
         <div class="eventcontainer">
           <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
