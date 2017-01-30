@@ -156,6 +156,7 @@ a {
       margin-left: 1rem;
     }
   }
+
 }
 
 .overlay-content {
@@ -614,12 +615,12 @@ footer {
     font-weight: bold;
 
     & a {
-      color: white;
+      color: var(--grijs);
       font-size: 1.2em;
     }
 
     & a:hover {
-      color: var(--zwart);
+      color: white;
     }
   }
 }
@@ -661,13 +662,13 @@ footer {
 
   & .detail_about {
     background-image: url(/assets/img/aboutpaper.png);
-    max-width: 26rem;
+    max-width: 42rem;
     padding: 2rem;
   }
 }
 
 .detail_sidebar {
-  width: 15rem;
+  width: 18rem;
 
   & h4 {
     background-color: var(--donkerblauw);
@@ -690,6 +691,32 @@ footer {
     line-height: 230%;
   }
 
+  & li {
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    padding-left: 2rem;
+
+  }
+
+  & .date {
+    background-image: url(/assets/img/date.png);
+  }
+  & .time {
+    background-image: url(/assets/img/time.png);
+  }
+
+  & .price {
+    background-image: url(/assets/img/price.png);
+  }
+
+  & .location {
+    background-image: url(/assets/img/location.png);
+  }
+
+  & .organiser {
+    background-image: url(/assets/img/organiser.png);
+  }
+
   & a {
     text-decoration: none;
     color: white;
@@ -710,16 +737,18 @@ footer {
 
 .detail_event_container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .organiserevent {
   width: 20rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
 
   & div {
     background-image: url(/assets/img/eventpaper.png);
     padding: .4rem;
-    min-height: 6rem;
+    height: 7rem;
     position: relative;
 
     & h4 {
@@ -829,6 +858,22 @@ footer {
   .sidebar {
     width: 15rem;
   }
+
+  .detail_sidebar {
+
+    & li {
+      padding-left: 3rem;
+    }
+  }
+
+  .organiserevent {
+    width: 40vw;
+
+    & img {
+      width: 40vw;
+      height: 11rem;
+    }
+  }
 }
 
 @media (width <= 740px) {
@@ -896,6 +941,10 @@ footer {
 
   .nieuwsbrief img {
     display: none;
+  }
+
+  .detail_sidebar {
+    width: 25rem;
   }
 }
 
@@ -970,8 +1019,20 @@ footer {
     }
   }
 
+  .programma_events {
+
+    & h3 {
+      display: none;
+    }
+  }
+
   .sidebar_mobile {
     display: inline-block;
+  }
+
+  .detail_sidebar a {
+    padding: 1rem;
+    margin-top: 1rem;
   }
 
 }
@@ -985,6 +1046,15 @@ footer {
   .sfeerbeeld1 {
     width: 37rem;
 
+  }
+
+  .organiserevent {
+    width: 80vw;
+
+    & img {
+      width: 80vw;
+      height: 11rem;
+    }
   }
 
 }

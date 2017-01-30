@@ -89,7 +89,7 @@ class EventDAO extends DAO {
   }
 
   public function selectSameOrganisers($id){
-    $sql = "SELECT * FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id LIMIT 3";
+    $sql = "SELECT * FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id LIMIT 4";
 
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
