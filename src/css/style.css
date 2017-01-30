@@ -11,11 +11,15 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: Roboto, sans-serif;
+  font-family: roboto, sans-serif;
   font-size: 16px;
   background-color: #f0eaeb;
   color: var(--grijs);
   line-height: 170%;
+}
+
+.hidden {
+  display: none;
 }
 
 .width {
@@ -38,6 +42,54 @@ a {
   text-decoration: none;
 }
 
+.burger {
+  width: 5rem;
+  height: 3.8rem;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  float: right;
+  display: none;
+  margin-right: 1.5rem;
+  z-index: 3;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: .7rem;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  right: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-child(1) {
+  top: 0;
+  transform-origin: left center;
+}
+
+.burger span:nth-child(2) {
+  top: 1.5rem;
+  transform-origin: left center;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+.burger.open span:nth-child(2) {
+  transform: rotate(-45deg);
+  top: 37px;
+  left: 8px;
+}
+
 .meerinfo {
   position: absolute;
   bottom: 1rem;
@@ -57,7 +109,7 @@ a {
   background-color: var(--lichtblauw);
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 5rem;
+  padding-top: 3rem;
 
   & h2 {
     text-align: center;
@@ -82,6 +134,7 @@ a {
   position: relative;
   width: 80vw;
   margin: auto;
+  margin-top: 5rem;
 }
 
 .headerdate {
@@ -90,17 +143,8 @@ a {
   right: -2rem;
 }
 
-.burger {
-  float: right;
-  font-size: 2.8em;
-  color: white;
-  margin-top: 2rem;
-  cursor: pointer;
-  display: none;
-}
-
 .overlay {
-  height: 0%;
+  height: 100%;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -112,6 +156,7 @@ a {
   background-image: url(/assets/img/logo.png);
   background-repeat: no-repeat;
   background-position: 5% 3.5%;
+  z-index: 2;
 
   & a {
     text-decoration: none;
@@ -125,25 +170,21 @@ a {
     color: var(--geel);
   }
 
-  & .closebtn {
-    font-size: 4em;
-    text-align: right;
-    display: block;
-    margin-bottom: 5rem;
-    margin-top: 3rem;
-  }
-
   & .navitem {
     text-transform: uppercase;
     font-weight: bold;
   }
 
-  & .dropdown {
-    margin-bottom: 2rem;
+  & .meerdok_dropdown {
+    margin-bottom: 5rem;
     line-height: 120%;
 
     & a {
       color: #2a2e2f;
+    }
+
+    & a:hover {
+      color: var(--geel);
     }
   }
 
@@ -162,7 +203,7 @@ a {
 .overlay-content {
   width: 100%;
   text-align: right;
-  margin-top: 1rem;
+  margin-top: 15rem;
 }
 
 nav {
@@ -329,6 +370,23 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   }
 }
 
+.sfeerbeelden {
+  position: absolute;
+  left: 16rem;
+  top: -2rem;
+  z-index: -3;
+
+  & .sfeerbeeld3 {
+    margin-top: 22rem;
+    transform: rotate(3deg);
+    margin-bottom: 5rem;
+  }
+
+  & .sfeerbeeld2 {
+    transform: rotate(-5deg);
+  }
+}
+
 .seizoen {
 
   & li {
@@ -363,7 +421,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
     background-image: url(/assets/img/checked.png);
     background-repeat: no-repeat;
     background-position: 0% 35%;
-    padding-left: 2.5rem;
+    padding-left: 2rem;
   }
 }
 
@@ -498,9 +556,10 @@ footer {
   background-color: var(--lichtblauw);
   background-repeat: no-repeat;
   background-position: right 60%;
+  padding-top: 3rem;
 
   & img {
-    margin-top: 1rem;
+    margin-top: -1rem;
   }
 }
 
@@ -576,17 +635,19 @@ footer {
     font-weight: bold;
     background-color: var(--donkerblauw);
     color: white;
-    padding-left: .5rem;
+    padding-left: .8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
   }
 
   & p {
     background-color: var(--lichtblauw);
-    padding-left: .5rem;
+    padding-left: .8rem;
   }
 
   & ul {
     background-color: var(--geel);
-    padding: .5rem 2rem 3rem 1rem;
+    padding: .5rem 2rem 3rem;
     line-height: 230%;
 
     & a {
@@ -642,7 +703,7 @@ footer {
 
 .sidebar_mobile_bot {
   background-color: var(--geel);
-  padding: .5rem 0;
+  padding: .7rem 0;
 }
 
 /*DETAIL*/
@@ -701,6 +762,7 @@ footer {
   & .date {
     background-image: url(/assets/img/date.png);
   }
+
   & .time {
     background-image: url(/assets/img/time.png);
   }
@@ -973,6 +1035,7 @@ footer {
     width: 90vw;
     margin: auto;
     margin-left: 2rem;
+    margin-bottom: 1rem;
   }
 
   nav input {
@@ -981,6 +1044,10 @@ footer {
     color: var(--grijs);
     transition: none;
     width: 100%;
+    margin-top: 1rem;
+    height: 3.5rem;
+    background-position: 2% 50%;
+
   }
 
   .criteria {
@@ -1002,6 +1069,10 @@ footer {
       background-position: 0% 35%;
       padding-left: 2.5rem;
     }
+  }
+
+  .sfeerbeelden {
+    display: none;
   }
 
   .programma {
@@ -1028,6 +1099,10 @@ footer {
 
   .sidebar_mobile {
     display: inline-block;
+
+    & p {
+      margin-top: .5rem;
+    }
   }
 
   .detail_sidebar a {

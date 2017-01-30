@@ -92,27 +92,72 @@ class EventsController extends Controller {
     //   'value' => '2017-05-01 19:00'
     // );
 
+    $conditions[] = array(
+      'field' => 'start',
+      'comparator' => '>=',
+      'value' => date('Y-m-d H:i')
+    );
+
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
 
-    $nextEvents = $this->eventDAO->selectNextEvents();
-		$this->set('nextEvents', $nextEvents);
+    // $nextEvents = $this->eventDAO->selectNextEvents();
+		// $this->set('nextEvents', $nextEvents);
   }
 
   public function programma() {
-    $month = $_GET['month'];
+    // $month = $_GET['month'];
+    //
+    // $monthlyEvents = $this->eventDAO->selectEventsByMonth($month);
+		// $this->set('monthlyEvents', $monthlyEvents);
 
-    $monthlyEvents = $this->eventDAO->selectEventsByMonth($month);
-		$this->set('monthlyEvents', $monthlyEvents);
+    $conditions = array();
+
+    if(!empty($_GET['search'])) {
+      $conditions[] = array(
+        'field' => 'title',
+        'comparator' => 'like',
+        'value' => $_GET['search']
+      );
+    }
+
+    if(!empty($_GET['month'])) {
+      $conditions[0] = array(
+        'field' => 'start',
+        'comparator' => '>=',
+        'value' => '2017-0' . $_GET['month'] . '-01 00:00:00'
+      );
+      $conditions[1] = array(
+        'field' => 'start',
+        'comparator' => '<',
+        'value' => '2017-0' . $_GET['month']+1 . '-01 00:00:00'
+      );
+    }
+
+    $events = $this->eventDAO->search($conditions);
+    $this->set('events', $events);
   }
 
   public function detail() {
-    $id = $_GET['id'];
+    // $id = $_GET['id'];
+    //
+    // $event = $this->eventDAO->selectById($id);
+		// $this->set('event', $event);
+    //
+    // $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
+		// $this->set('organiserEvents', $organiserEvents);
 
-    $event = $this->eventDAO->selectById($id);
-		$this->set('event', $event);
+  $conditions = array();
 
-    $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
-		$this->set('organiserEvents', $organiserEvents);
+  if(!empty($_GET['id'])) {
+    $conditions[] = array(
+      'field' => 'id',
+      'comparator' => '=',
+      'value' => $_GET['id']
+    );
+  }
+
+  $event = $this->eventDAO->search($conditions);
+  $this->set('event', $event);
   }
 }

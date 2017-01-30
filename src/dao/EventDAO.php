@@ -36,6 +36,8 @@ class EventDAO extends DAO {
         $columnName = 'ma3_dok_tags.id';
       } else if($columnName == 'tag') {
         $columnName = 'ma3_dok_tags.tag';
+      } else if($columnName == 'id') {
+        $columnName = 'ma3_dok_events.id';
       }
       //handle functions
       if(!empty($condition['function'])) {
@@ -53,6 +55,9 @@ class EventDAO extends DAO {
     if(!empty($conditionSqls)) {
       $sql .= 'AND ' . implode(' AND ', $conditionSqls);
     }
+    //hier kun je nog ORDER BY erbij zetten
+    // ORDER BY start ASC LIMIT 3
+
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($conditionParams);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -158,14 +163,14 @@ class EventDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function selectEventsByMonth($month){
-    $sql = "SELECT * FROM `ma3_dok_events` WHERE MONTH(start) = :month" ;
-
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':month', $month);
-    $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
+  // public function selectEventsByMonth($month){
+  //   $sql = "SELECT * FROM `ma3_dok_events` WHERE MONTH(start) = :month" ;
+  //
+  //   $stmt = $this->pdo->prepare($sql);
+  //   $stmt->bindValue(':month', $month);
+  //   $stmt->execute();
+  //
+  //   return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  // }
 
 }

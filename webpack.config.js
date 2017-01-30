@@ -4,7 +4,6 @@ const webpack = require(`webpack`);
 const {HotModuleReplacementPlugin} = webpack;
 const {UglifyJsPlugin} = webpack.optimize;
 
-const CopyWebpackPlugin = require(`copy-webpack-plugin`);
 const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`);
 const configHtmls = require(`webpack-config-htmls`)();
 
@@ -19,13 +18,6 @@ const port = 3000;
 // - srcset images (not loaded through html-loader )
 // - json files (through fetch)
 // - fonts via WebFontLoader
-
-const copy = new CopyWebpackPlugin([{
-  from: `./src/assets`,
-  to: `assets`
-}], {
-  ignore: [ `.DS_Store` ]
-});
 
 const config = {
 

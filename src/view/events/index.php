@@ -1,15 +1,16 @@
 <header class="header_home">
-  <div class="width">
-    <span class="burger" onclick="openNav()">&#9776;</span>
+  <div class="burger">
+    <span></span>
+    <span></span>
   </div>
 
-  <div id="myNav" class="overlay">
+  <div class="overlay hidden">
     <div class="width">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
       <div class="overlay-content">
         <ul>
-          <li class="navitem"><a href="#">Meer DOK &#x25BC;</a></li>
-            <div class="dropdown">
+          <li class="navitem"><a href="#" class="overlay_dropdown">Meer DOK &#x25BC;</a></li>
+            <div class="meerdok_dropdown hidden">
               <a href="#">Gebruiken</a>
               <a href="#">Keuken</a>
               <a href="#">Sport</a>
@@ -65,7 +66,8 @@
         <li><a href="#">Blogs</a></li>
         <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
       </ul>
-      <form>
+      <form action="index.php">
+        <input type="hidden" name="page" value="programma" />
         <input type="text" name="search">
       </form>
 
@@ -113,6 +115,8 @@
 </section>
 
 <section class="dokinfo width">
+
+
   <div class="longpaper_container">
     <article>
       <h3>DOK zoekt</h3>
@@ -152,6 +156,11 @@
         <li>Experiment en ontmoeting</li>
       </ul>
     </div>
+
+    <div class="sfeerbeelden">
+      <img src="assets/img/sfeerbeeld3@0,75x.jpg" alt="sfeerbeeld" class="sfeerbeeld3">
+      <img src="assets/img/sfeerbeeld2@0,75x.jpg" alt="sfeerbeeld" class="sfeerbeeld2">
+    </div>
   </div>
 
 </section>
@@ -160,7 +169,7 @@
   <article class="width">
     <h3>Opkomende events</h3>
 
-    <?php foreach ($nextEvents as $event): ?>
+    <?php foreach ($events as $event): ?>
 
       <div class="eventcontainer">
 

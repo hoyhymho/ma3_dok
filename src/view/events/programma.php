@@ -1,58 +1,22 @@
-<header class="header_standard">
-  <div class="width">
-    <span class="burger" onclick="openNav()">&#9776;</span>
-  </div>
+<?php $maanden = array("Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"); ?>
 
-  <div id="myNav" class="overlay">
-    <div class="width">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlay-content">
-        <ul>
-          <li class="navitem"><a href="#">Meer DOK &#x25BC;</a></li>
-            <div class="dropdown">
-              <a href="#">Gebruiken</a>
-              <a href="#">Keuken</a>
-              <a href="#">Sport</a>
-              <a href="#">Tank</a>
-            </div>
-          <li class="navitem"><a href="#">Blogs</a></li>
-          <li class="navitem"><a href="index.php?page=programma&amp;month=5">Programma</a></li>
-        </ul>
-
-        <div class="socialmedia">
-          <a href="#"><img src="assets/img/fb.png" alt=""></a>
-          <a href="#"><img src="assets/img/tw.png" alt=""></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="width">
-    <a href="index.php"><img src="assets/img/logo.png" alt="DOK"></a>
-  </div>
-  <div class="navcontainer">
-    <nav class="width">
-      <ul class="topnav">
-        <li class="dropdown"><a href="#" class="dropbtn">Meer DOK</a>
-          <div class="dropdown-content">
-            <a href="#">Gebruiken</a>
-            <a href="#">Keuken</a>
-            <a href="#">Sport</a>
-            <a href="#">Tank</a>
-          </div>
-        </li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="index.php?page=programma&amp;month=5">Programma</a></li>
-      </ul>
-      <form>
-        <input type="text" name="search">
-      </form>
-    </nav>
-  </div>
+<header>
   <div class="sidebar_mobile">
     <div class="sidebar_mobile_top">
       <h4 class="width">Programma</h4>
-      <p class="width"><?php echo date('F', strtotime($_GET['month'])); ?> 2017</p>
+      <p class="width">
+        <?php
+          if (!empty($_GET['month'])) {
+            echo "Events in ";
+            echo $maanden[$_GET['month']-1];
+            echo " 2017";
+          }elseif (!empty($_GET['search'])) {
+            echo "zoekopdrachten voor '";
+            echo $_GET['search'];
+            echo "'";
+          }
+        ?>
+      </p>
     </div>
     <div class="sidebar_mobile_bot">
       <ul class="width">
@@ -68,7 +32,6 @@
 </header>
 
 <section class="programma width">
-  <h3>Opkomende events</h3>
   <article class="programma_container">
     <div class="sidebar">
       <h4>Wanneer</h4>
@@ -82,8 +45,19 @@
       </ul>
     </div>
     <div class="programma_events">
-      <h3><?php echo date('F', strtotime($_GET['month'])); ?></h3>
-      <?php foreach ($monthlyEvents as $event): ?>
+      <h3>
+        <?php
+          if (!empty($_GET['month'])) {
+            echo "events in ";
+            echo $maanden[$_GET['month']-1];
+          }elseif (!empty($_GET['search'])) {
+            echo "zoekopdrachten voor '";
+            echo $_GET['search'];
+            echo "'";
+          }
+        ?>
+      </h3>
+      <?php foreach ($events as $event): ?>
         <div class="eventcontainer">
           <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
           <div class="eventdate">
@@ -92,7 +66,7 @@
           </div>
           <div class="eventname">
             <h4><?php echo $event['title']; ?></h4>
-            <p><?php echo $event['start']; ?></p>
+            <p><?php echo date("j/n/Y", strtotime($event['start'])); ?></p>
             <a href="index.php?page=detail&amp;id=<?php echo $event['id'] ?> " class="meerinfo">meer info</a>
           </div>
         </div>
