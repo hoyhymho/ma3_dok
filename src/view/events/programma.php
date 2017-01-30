@@ -49,6 +49,22 @@
       </form>
     </nav>
   </div>
+  <div class="sidebar_mobile">
+    <div class="sidebar_mobile_top">
+      <h4 class="width">Programma</h4>
+      <p class="width"><?php echo date('F', strtotime($_GET['month'])); ?> 2017</p>
+    </div>
+    <div class="sidebar_mobile_bot">
+      <ul class="width">
+        <li><a href="index.php?page=programma&amp;month=5">Mei</a></li>
+        <li><a href="index.php?page=programma&amp;month=6">Jun</a></li>
+        <li><a href="index.php?page=programma&amp;month=7">Jul</a></li>
+        <li><a href="index.php?page=programma&amp;month=8">Aug</a></li>
+        <li><a href="index.php?page=programma&amp;month=9">Sep</a></li>
+      </ul>
+    </div>
+
+  </div>
 </header>
 
 <section class="programma width">
@@ -77,7 +93,7 @@
           <div class="eventname">
             <h4><?php echo $event['title']; ?></h4>
             <p><?php echo $event['start']; ?></p>
-            <a href="index.php?page=detail&amp;id=<?php echo $event['id'] ?>">meer info</a>
+            <a href="index.php?page=detail&amp;id=<?php echo $event['id'] ?> " class="meerinfo">meer info</a>
           </div>
         </div>
       <?php endforeach; ?>
