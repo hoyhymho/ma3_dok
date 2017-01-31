@@ -32,6 +32,8 @@ class EventDAO extends DAO {
         $columnName = 'ma3_dok_locations.name';
       } else if($columnName == 'organiser') {
         $columnName = 'ma3_dok_organisers.name';
+      } else if($columnName == 'organiser_id') {
+        $columnName = 'ma3_dok_organisers.id';
       } else if($columnName == 'tag_id') {
         $columnName = 'ma3_dok_tags.id';
       } else if($columnName == 'tag') {
@@ -60,7 +62,6 @@ class EventDAO extends DAO {
     if($limit) {
       $sql = $sql . " LIMIT 3"; //hier nog limit 3 aan sql toevoegen
     }
-    // ORDER BY start ASC LIMIT 3
 
     // echo $sql;
     // print_r($conditionParams);
@@ -141,7 +142,6 @@ class EventDAO extends DAO {
   }
 
   public function selectById($id) {
-    $conditions = array();
     $conditions[] = array(
       'field' => 'id',
       'comparator' => '=',
@@ -162,25 +162,23 @@ class EventDAO extends DAO {
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // $conditions[] = array(
+    //   'field' => 'id',
+    //   'comparator' => '=',
+    //   'value' => $id
+    // );
+    //
+    // $conditions[] = array(
+    //   'field' => 'organiser_id',
+    //   'comparator' => '=',
+    //   'value' => 'organiser_id'
+    // );
+    //
+    // $events = $this->search($conditions);
+    // if(empty($events)) {
+    //   return false;
+    // }
+    // return $events;
   }
-
-  public function selectNextEvents(){
-    $sql = "SELECT * FROM `ma3_dok_events` ORDER BY start ASC LIMIT 3" ;
-
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  // public function selectEventsByMonth($month){
-  //   $sql = "SELECT * FROM `ma3_dok_events` WHERE MONTH(start) = :month" ;
-  //
-  //   $stmt = $this->pdo->prepare($sql);
-  //   $stmt->bindValue(':month', $month);
-  //   $stmt->execute();
-  //
-  //   return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  // }
-
 }

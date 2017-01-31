@@ -139,15 +139,16 @@ class EventsController extends Controller {
   }
 
   public function detail() {
-    // $id = $_GET['id'];
-    //
-    // $event = $this->eventDAO->selectById($id);
-		// $this->set('event', $event);
-    //
-    // $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
-		// $this->set('organiserEvents', $organiserEvents);
+    $id = $_GET['id'];
 
-    $event = $this->eventDAO->selectById($_GET['id']);
+    $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
+		$this->set('organiserEvents', $organiserEvents);
+
+    $event = $this->eventDAO->selectById($id);
     $this->set('event', $event);
+
+    // $organiserEvents = $this->eventDAO->selectSameOrganisers($_GET['id']);
+    // $this->set('organiserEvents', $organiserEvents);
+
     }
 }

@@ -9,8 +9,8 @@
 
       <div class="overlay-content">
         <ul>
-          <li class="navitem"><a href="#" class="overlay_dropdown">Meer DOK &#x25BC;</a></li>
-            <div class="meerdok_dropdown hidden">
+          <li class="navitem"><a href="#">Meer DOK &#x25BC;</a></li>
+            <div class="overlay_dropdown hidden">
               <a href="#">Gebruiken</a>
               <a href="#">Keuken</a>
               <a href="#">Sport</a>
@@ -173,7 +173,7 @@
 
       <div class="eventcontainer">
 
-        <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
+        <img src="assets/img/400/<?php echo $event['image'] ?>" alt="event" class="eventimage">
 
         <div class="eventdate">
           <p class="eventdag"><?php echo date('d', strtotime($event['start'])); ?></p>

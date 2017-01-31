@@ -168,35 +168,34 @@ a {
   & a:hover {
     color: var(--geel);
   }
+}
 
-  & .navitem {
-    text-transform: uppercase;
-    font-weight: bold;
+.navitem {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.meerdok_dropdown {
+  margin-bottom: 5rem;
+  line-height: 120%;
+
+  & a {
+    color: #2a2e2f;
   }
 
-  & .meerdok_dropdown {
-    margin-bottom: 5rem;
-    line-height: 120%;
-
-    & a {
-      color: #2a2e2f;
-    }
-
-    & a:hover {
-      color: var(--geel);
-    }
+  & a:hover {
+    color: var(--geel);
   }
+}
 
-  & .socialmedia {
-    display: flex;
-    float: right;
-    margin-top: 5rem;
+.socialmedia {
+  display: flex;
+  float: right;
+  margin-top: 5rem;
 
-    & img {
-      margin-left: 1rem;
-    }
+  & img {
+    margin-left: 1rem;
   }
-
 }
 
 .overlay-content {
@@ -223,7 +222,7 @@ nav {
 
   & input {
     font-size: 1em;
-    width: 4rem;
+    width: 10rem;
     height: 2rem;
     vertical-align: center;
     transition: width .4s ease-in-out;
@@ -239,7 +238,7 @@ nav {
 }
 
 nav input:focus {
-  width: 100%;
+  width: 150%;
 }
 
 .navcontainer {
@@ -322,7 +321,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
     margin-top: .7rem;
     padding: .8rem;
     padding-left: 3rem;
-    width: 40vw;
+    width: 35vw;
     background-image: url(/assets/img/plus.png);
     background-repeat: no-repeat;
     background-position: 1rem;
@@ -374,16 +373,16 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   left: 16rem;
   top: -2rem;
   z-index: -3;
+}
 
-  & .sfeerbeeld3 {
-    margin-top: 22rem;
-    transform: rotate(3deg);
-    margin-bottom: 5rem;
-  }
+.sfeerbeeld3 {
+  margin-top: 22rem;
+  transform: rotate(3deg);
+  margin-bottom: 5rem;
+}
 
-  & .sfeerbeeld2 {
-    transform: rotate(-5deg);
-  }
+.sfeerbeeld2 {
+  transform: rotate(-5deg);
 }
 
 .seizoen {
@@ -434,49 +433,49 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
   background-repeat: no-repeat;
   background-position: 100%;
   padding-bottom: 15rem;
+}
 
-  & .eventimage {
-    overflow: hidden;
-    height: 100%;
-    width: 7rem;
-    object-fit: cover;
-  }
+.eventimage {
+  overflow: hidden;
+  height: 100%;
+  width: 7rem;
+  object-fit: cover;
+}
 
-  & .eventcontainer {
-    display: flex;
-    margin-bottom: 1rem;
-    height: 8rem;
-  }
+.eventcontainer {
+  display: flex;
+  margin-bottom: 1rem;
+  height: 8rem;
+}
 
-  & .eventdate {
-    background-color: var(--geel);
-    padding: 1rem;
-    width: 2.5rem;
-    text-align: center;
-  }
+.eventdate {
+  background-color: var(--geel);
+  padding: 1rem;
+  width: 2.5rem;
+  text-align: center;
+}
 
-  & .eventdag {
-    font-size: 2em;
-    font-weight: bold;
-  }
+.eventdag {
+  font-size: 2em;
+  font-weight: bold;
+}
 
-  & .eventmaand {
+.eventmaand {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.eventname {
+  background-image: url(/assets/img/eventpaper.png);
+  padding: 1rem;
+  width: 30vw;
+  position: relative;
+
+  & h4 {
     text-transform: uppercase;
+    font-size: 1.4em;
     font-weight: bold;
-    font-size: 1.3em;
-  }
-
-  & .eventname {
-    background-image: url(/assets/img/eventpaper.png);
-    padding: 1rem;
-    width: 30vw;
-    position: relative;
-
-    & h4 {
-      text-transform: uppercase;
-      font-size: 1.4em;
-      font-weight: bold;
-    }
   }
 }
 
@@ -570,59 +569,59 @@ footer {
 .programma {
   margin-top: 5rem;
   padding-bottom: 15rem;
+}
 
-  & .eventimage {
-    overflow: hidden;
-    height: 100%;
-    width: 13vw;
-    object-fit: cover;
+.eventimage {
+  overflow: hidden;
+  height: 100%;
+  width: 13vw;
+  object-fit: cover;
+}
+
+.programma_events {
+  margin-left: 10vw;
+}
+
+.eventcontainer {
+  display: flex;
+  margin-bottom: 1rem;
+  height: 8rem;
+  position: relative;
+}
+
+.eventdate {
+  background-color: var(--geel);
+  padding: .6rem .4rem;
+  text-align: center;
+  position: absolute;
+}
+
+.eventdag {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.eventmaand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.eventname {
+  background-image: url(/assets/img/eventpaper.png);
+  padding: 1rem;
+  width: 40vw;
+
+  & a {
+    text-decoration: none;
+    color: var(--grijs);
+    float: right;
+    margin-top: -.3rem;
   }
 
-  & .programma_events {
-    margin-left: 10vw;
-  }
-
-  & .eventcontainer {
-    display: flex;
-    margin-bottom: 1rem;
-    height: 8rem;
-    position: relative;
-  }
-
-  & .eventdate {
-    background-color: var(--geel);
-    padding: .6rem .4rem;
-    text-align: center;
-    position: absolute;
-  }
-
-  & .eventdag {
-    font-size: 2em;
-    font-weight: bold;
-  }
-
-  & .eventmaand {
+  & h4 {
     text-transform: uppercase;
+    font-size: 1.4em;
     font-weight: bold;
-  }
-
-  & .eventname {
-    background-image: url(/assets/img/eventpaper.png);
-    padding: 1rem;
-    width: 40vw;
-
-    & a {
-      text-decoration: none;
-      color: var(--grijs);
-      float: right;
-      margin-top: -.3rem;
-    }
-
-    & h4 {
-      text-transform: uppercase;
-      font-size: 1.4em;
-      font-weight: bold;
-    }
   }
 }
 
@@ -680,7 +679,7 @@ footer {
     }
 
     & a:hover {
-      color: white;
+      color: var(--roos);
     }
   }
 }
@@ -719,12 +718,12 @@ footer {
 .detail_flex {
   display: flex;
   justify-content: space-between;
+}
 
-  & .detail_about {
-    background-image: url(/assets/img/aboutpaper.png);
-    max-width: 42rem;
-    padding: 2rem;
-  }
+.detail_about {
+  background-image: url(/assets/img/aboutpaper.png);
+  max-width: 42rem;
+  padding: 2rem;
 }
 
 .detail_sidebar {
@@ -758,26 +757,6 @@ footer {
 
   }
 
-  & .date {
-    background-image: url(/assets/img/date.png);
-  }
-
-  & .time {
-    background-image: url(/assets/img/time.png);
-  }
-
-  & .price {
-    background-image: url(/assets/img/price.png);
-  }
-
-  & .location {
-    background-image: url(/assets/img/location.png);
-  }
-
-  & .organiser {
-    background-image: url(/assets/img/organiser.png);
-  }
-
   & a {
     text-decoration: none;
     color: white;
@@ -786,6 +765,26 @@ footer {
     float: right;
     margin-right: 1rem;
   }
+}
+
+.date {
+  background-image: url(/assets/img/date.png);
+}
+
+.time {
+  background-image: url(/assets/img/time.png);
+}
+
+.price {
+  background-image: url(/assets/img/price.png);
+}
+
+.location {
+  background-image: url(/assets/img/location.png);
+}
+
+.organiser {
+  background-image: url(/assets/img/organiser.png);
 }
 
 .detail_gallery {
@@ -815,7 +814,7 @@ footer {
     & h4 {
       font-weight: bold;
       text-transform: uppercase;
-      font-size: 1.2rem;
+      font-size: 1.2em;
       color: var(--grijs);
     }
 
@@ -843,6 +842,11 @@ footer {
     width: 90vw;
   }
 
+  nav ul li a, .dropbtn {
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+  }
+
   nav input {
     height: 2.5rem;
   }
@@ -852,7 +856,6 @@ footer {
   }
 
   .dokopent_lijst {
-    position: absolute;
     left: 35rem;
     top: 4rem;
   }
@@ -874,18 +877,18 @@ footer {
 
   .nextevents {
     background-position: 140%;
+  }
 
-    & .eventcontainer {
-      height: 10rem;
-    }
+  .eventcontainer {
+    height: 10rem;
+  }
 
-    & .eventname {
-      width: 40vw;
-    }
+  .eventname {
+    width: 40vw;
+  }
 
-    & .eventdate {
-      width: 3rem;
-    }
+  .eventdate {
+    width: 3rem;
   }
 
   .nieuwsbrief input, .nieuwsbrief button {
@@ -898,22 +901,22 @@ footer {
 
   .programma_events {
     background-position: 140%;
+  }
 
-    & .eventcontainer {
-      height: 12rem;
-    }
+  .eventcontainer {
+    height: 12rem;
+  }
 
-    & .eventname {
-      width: 40vw;
-    }
+  .eventname {
+    width: 40vw;
+  }
 
-    & .eventdate {
-      left: 5rem;
-    }
+  .eventdate {
+    left: 5rem;
+  }
 
-    & .eventimage {
-      width: 10rem;
-    }
+  .eventimage {
+    width: 10rem;
   }
 
   .sidebar {
@@ -921,9 +924,20 @@ footer {
   }
 
   .detail_sidebar {
+    font-size: 120%;
+    width: 25rem;
 
     & li {
       padding-left: 3rem;
+    }
+
+    & h4 {
+      padding-top: .9rem;
+      padding-bottom: .9rem;
+    }
+
+    & a {
+      padding: .9rem .9rem;
     }
   }
 
@@ -934,6 +948,12 @@ footer {
       width: 40vw;
       height: 11rem;
     }
+  }
+
+  .headertitle {
+    font-size: 1.4em;
+    padding-top: 2rem;
+    padding-top: 2rem;
   }
 }
 
@@ -996,6 +1016,24 @@ footer {
     }
   }
 
+  .sidebar {
+  & li {
+
+
+    & a {
+      display: inline-block;
+      padding: .5rem;
+      width: 100%;
+    }
+
+    & a:hover {
+      background-color: var(--roos);
+      color: white;
+    }
+  }
+  }
+
+
   .nieuwsbrief article {
     margin-left: 0;
   }
@@ -1046,7 +1084,10 @@ footer {
     margin-top: 1rem;
     height: 3.5rem;
     background-position: 2% 50%;
+  }
 
+  nav input:focus {
+    width: 100%;
   }
 
   .criteria {

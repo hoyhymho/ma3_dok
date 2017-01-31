@@ -20,11 +20,11 @@
     </div>
     <div class="sidebar_mobile_bot">
       <ul class="width">
-        <li><a href="index.php?page=programma&amp;month=05">Mei</a></li>
-        <li><a href="index.php?page=programma&amp;month=06">Jun</a></li>
-        <li><a href="index.php?page=programma&amp;month=07">Jul</a></li>
-        <li><a href="index.php?page=programma&amp;month=08">Aug</a></li>
-        <li><a href="index.php?page=programma&amp;month=09">Sep</a></li>
+        <li><a href="index.php?page=programma&amp;month=5">Mei</a></li>
+        <li><a href="index.php?page=programma&amp;month=6">Jun</a></li>
+        <li><a href="index.php?page=programma&amp;month=7">Jul</a></li>
+        <li><a href="index.php?page=programma&amp;month=8">Aug</a></li>
+        <li><a href="index.php?page=programma&amp;month=9">Sep</a></li>
       </ul>
     </div>
 
@@ -39,9 +39,9 @@
       <ul>
         <li><a href="index.php?page=programma&amp;month=05">Mei</a></li>
         <li><a href="index.php?page=programma&amp;month=06">Juni</a></li>
-        <li><a href="index.php?page=programma&amp;month=07">Juli</a></li>
-        <li><a href="index.php?page=programma&amp;month=08">Augustus</a></li>
-        <li><a href="index.php?page=programma&amp;month=09">September</a></li>
+        <li><a href="index.php?page=programma&amp;month=7">Juli</a></li>
+        <li><a href="index.php?page=programma&amp;month=8">Augustus</a></li>
+        <li><a href="index.php?page=programma&amp;month=9">September</a></li>
       </ul>
     </div>
     <div class="programma_events">
@@ -59,7 +59,7 @@
       </h3>
       <?php foreach ($events as $event): ?>
         <div class="eventcontainer">
-          <img src="assets/img/400/<?php echo $event['organiser_id'] ?>.jpg" alt="event" class="eventimage">
+          <img src="assets/img/400/<?php echo $event['image'] ?>" alt="event" class="eventimage">
           <div class="eventdate">
             <p class="eventdag"><?php echo date('d', strtotime($event['start'])); ?></p>
             <p class="eventmaand"><?php echo date('M', strtotime($event['start'])); ?></p>
