@@ -10,8 +10,8 @@ const configHtmls = require(`webpack-config-htmls`)();
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
 // change for production build on different server path
-// const publicPath = `/hoy.hym.ho/20162017/MAIII/DOK/`; //
-const publicPath = ``; //
+// const publicPath = `/hoy.hym.ho/20162017/MA3/DOK/`;
+const publicPath = ``;
 
 const port = 3000;
 

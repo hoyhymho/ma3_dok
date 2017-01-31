@@ -89,7 +89,7 @@
       <footer>
         <div class="sponsors width">
           <?php for ($i=1; $i <= 11; $i++):?>
-            <img src="assets/img/sponsor<?php echo $i ?>.png" alt="sponsor">
+            <img src="assets/img/sponsor<?php echo $i ?>-min.png" alt="sponsor">
           <?php endfor; ?>
 
         </div>
