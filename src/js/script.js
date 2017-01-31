@@ -2,7 +2,7 @@
   const $burger = document.querySelector(`.burger`);
   const $overlay = document.querySelector(`.overlay`);
   const $dropdown = document.querySelector(`.overlay_dropdown`);
-  const $meerdok_dropdown = document.querySelector(`.meerdok_dropdown`);
+  const $meerdok_ = document.querySelector(`.meerdok_dropdown`);
 
   const init = () => {
     console.log(`hello world`);
@@ -19,7 +19,7 @@
 
   const showDropdown = () => {
 
-    $meerdok_dropdown.classList.toggle(`hidden`);
+    $meerdok_.classList.toggle(`hidden`);
   };
 
   init();

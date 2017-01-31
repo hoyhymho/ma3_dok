@@ -20,11 +20,11 @@
     </div>
     <div class="sidebar_mobile_bot">
       <ul class="width">
-        <li><a href="index.php?page=programma&amp;month=5">Mei</a></li>
-        <li><a href="index.php?page=programma&amp;month=6">Jun</a></li>
-        <li><a href="index.php?page=programma&amp;month=7">Jul</a></li>
-        <li><a href="index.php?page=programma&amp;month=8">Aug</a></li>
-        <li><a href="index.php?page=programma&amp;month=9">Sep</a></li>
+        <li><a href="index.php?page=programma&amp;month=05">Mei</a></li>
+        <li><a href="index.php?page=programma&amp;month=06">Jun</a></li>
+        <li><a href="index.php?page=programma&amp;month=07">Jul</a></li>
+        <li><a href="index.php?page=programma&amp;month=08">Aug</a></li>
+        <li><a href="index.php?page=programma&amp;month=09">Sep</a></li>
       </ul>
     </div>
 
@@ -37,11 +37,11 @@
       <h4>Wanneer</h4>
       <p>2017</p>
       <ul>
-        <li><a href="index.php?page=programma&amp;month=5">Mei</a></li>
-        <li><a href="index.php?page=programma&amp;month=6">Juni</a></li>
-        <li><a href="index.php?page=programma&amp;month=7">Juli</a></li>
-        <li><a href="index.php?page=programma&amp;month=8">Augustus</a></li>
-        <li><a href="index.php?page=programma&amp;month=9">September</a></li>
+        <li><a href="index.php?page=programma&amp;month=05">Mei</a></li>
+        <li><a href="index.php?page=programma&amp;month=06">Juni</a></li>
+        <li><a href="index.php?page=programma&amp;month=07">Juli</a></li>
+        <li><a href="index.php?page=programma&amp;month=08">Augustus</a></li>
+        <li><a href="index.php?page=programma&amp;month=09">September</a></li>
       </ul>
     </div>
     <div class="programma_events">

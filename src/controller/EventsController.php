@@ -98,7 +98,7 @@ class EventsController extends Controller {
       'value' => date('Y-m-d H:i')
     );
 
-    $events = $this->eventDAO->search($conditions);
+    $events = $this->eventDAO->search($conditions, 3);
     $this->set('events', $events);
 
     // $nextEvents = $this->eventDAO->selectNextEvents();
@@ -122,15 +122,15 @@ class EventsController extends Controller {
     }
 
     if(!empty($_GET['month'])) {
-      $conditions[0] = array(
+      $conditions[] = array(
         'field' => 'start',
         'comparator' => '>=',
-        'value' => '2017-0' . $_GET['month'] . '-01 00:00:00'
+        'value' => '2017-' . $_GET['month'] . '-01 00:00:00'
       );
-      $conditions[1] = array(
+      $conditions[] = array(
         'field' => 'start',
         'comparator' => '<',
-        'value' => '2017-0' . $_GET['month']+1 . '-01 00:00:00'
+        'value' => '2017-' . ($_GET['month']+1) . '-01 00:00:00'
       );
     }
 
@@ -147,17 +147,7 @@ class EventsController extends Controller {
     // $organiserEvents = $this->eventDAO->selectSameOrganisers($id);
 		// $this->set('organiserEvents', $organiserEvents);
 
-  $conditions = array();
-
-  if(!empty($_GET['id'])) {
-    $conditions[] = array(
-      'field' => 'id',
-      'comparator' => '=',
-      'value' => $_GET['id']
-    );
-  }
-
-  $event = $this->eventDAO->search($conditions);
-  $this->set('event', $event);
-  }
+    $event = $this->eventDAO->selectById($_GET['id']);
+    $this->set('event', $event);
+    }
 }

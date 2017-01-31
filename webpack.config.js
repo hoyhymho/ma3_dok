@@ -10,14 +10,10 @@ const configHtmls = require(`webpack-config-htmls`)();
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
 // change for production build on different server path
-const publicPath = `/`;
+// const publicPath = `/hoy.hym.ho/20162017/MAIII/DOK/`; //
+const publicPath = ``; //
 
 const port = 3000;
-
-// hard copy assets folder for:
-// - srcset images (not loaded through html-loader )
-// - json files (through fetch)
-// - fonts via WebFontLoader
 
 const config = {
 
@@ -35,7 +31,7 @@ const config = {
 
   output: {
     path: path.join(__dirname, `dist`),
-    filename: `js/main.js`,
+    filename: `js/[name].js`,
     publicPath
   },
 
@@ -151,7 +147,6 @@ if (process.env.NODE_ENV === `production`) {
 
   config.plugins = [
     extractCSS,
-    copy,
     new UglifyJsPlugin({
       sourceMap: true, // false returns errors.. -p + plugin conflict
       comments: false

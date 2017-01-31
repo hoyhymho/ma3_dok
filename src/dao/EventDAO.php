@@ -2,7 +2,7 @@
 require_once __DIR__ . '/DAO.php';
 class EventDAO extends DAO {
 
-  public function search($conditions = array()) {
+  public function search($conditions = array(), $limit = false) {
     $sql = "SELECT DISTINCT
       ma3_dok_events.*,
       ma3_dok_organisers.name as organiser
@@ -56,7 +56,14 @@ class EventDAO extends DAO {
       $sql .= 'AND ' . implode(' AND ', $conditionSqls);
     }
     //hier kun je nog ORDER BY erbij zetten
+    $sql = $sql . " ORDER BY start";
+    if($limit) {
+      $sql = $sql . " LIMIT 3"; //hier nog limit 3 aan sql toevoegen
+    }
     // ORDER BY start ASC LIMIT 3
+
+    // echo $sql;
+    // print_r($conditionParams);
 
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($conditionParams);
@@ -79,27 +86,6 @@ class EventDAO extends DAO {
       }
     }
     return $result;
-  }
-
-  public function selectById($id) {
-    $sql = "SELECT *, ma3_dok_locations.name AS location_name, ma3_dok_organisers.name AS organiser_name FROM `ma3_dok_events`
-    INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id
-    LEFT JOIN `ma3_dok_events_locations` ON ma3_dok_events.id = ma3_dok_events_locations.event_id
-    LEFT OUTER JOIN `ma3_dok_locations` ON ma3_dok_locations.id = ma3_dok_events_locations.location_id
-    WHERE ma3_dok_events.id = :id";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-  }
-
-  public function selectSameOrganisers($id){
-    $sql = "SELECT * FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id LIMIT 4";
-
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   private function _getEventIdsFromResult(&$result) {
@@ -152,6 +138,30 @@ class EventDAO extends DAO {
       $tagsByEventId[$row['event_id']][] = $row;
     }
     return $tagsByEventId;
+  }
+
+  public function selectById($id) {
+    $conditions = array();
+    $conditions[] = array(
+      'field' => 'id',
+      'comparator' => '=',
+      'value' => $id
+    );
+
+    $events = $this->search($conditions);
+    if(empty($events)) {
+      return false;
+    }
+    return $events[0];
+  }
+
+  public function selectSameOrganisers($id){
+    $sql = "SELECT * FROM `ma3_dok_events` INNER JOIN `ma3_dok_organisers` ON ma3_dok_events.organiser_id = ma3_dok_organisers.id LIMIT 4";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectNextEvents(){
